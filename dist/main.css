@@ -1,0 +1,33 @@
+#game{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+   height: 100vh;
+  background-color: aquamarine;
+
+}
+
+.mehButton{
+  width: 100px;
+  background: black;
+  color: white;
+  border-radius: 25px;
+}
+
+#money{
+  width: 100px;
+    align-self: flex-end;
+    font-size: 25px;
+}
+ #title{
+   align-self: center;
+ }
+
+ #buttons{
+  align-self: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column
+ }

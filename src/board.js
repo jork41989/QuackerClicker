@@ -1,8 +1,9 @@
-
+const  Upgrades = require("./upgrades") 
 class Board{
   constructor(gameDiv) {
   this.money = 1
   this.count = 99
+  this.inc = 1
   this.gameDivR = gameDiv
   }
 
@@ -10,13 +11,14 @@ class Board{
 makeButton(){
   console.log(this)
   let innerButton = document.createElement('button')
+  let buttonDiv = document.getElementById("buttons")
   innerButton.innerHTML = "click_me"
   innerButton.className = "mehButton"
   innerButton.addEventListener('click', () =>  {
-    this.money = this.money + 1
+    this.money = this.money + this.inc
     this.renderMoney()
   }, false);
- return this.gameDivR.appendChild( innerButton)
+ return buttonDiv.appendChild( innerButton)
 }
 
 renderMoney(){
@@ -27,6 +29,9 @@ renderMoney(){
 start() {
   this.renderMoney()
   this.makeButton()
+  const Uper = new Upgrades(this)
+  this.Uper = Uper
+  Uper.start()
 }
 }
 
