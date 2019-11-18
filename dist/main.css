@@ -7,11 +7,31 @@
 
 }
 
+.mainDiv{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .mehButton{
   width: 100px;
   background: black;
   color: white;
   border-radius: 25px;
+}
+
+.duckButton{
+  height: 300px;
+  width: 265px;
+  color:transparent;
+  background-image: url(./images/duck.png);
+  background-size: cover;
+  content: none;
+}
+
+.duckButton:active{
+  background-position-x: -8px;
+    width: 296px;
+  background-image: url(./images/duckQuack.png);
 }
 
 #money{

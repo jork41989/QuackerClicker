@@ -10,10 +10,10 @@ class Board{
 
 makeButton(){
   console.log(this)
-  let innerButton = document.createElement('button')
+  let innerButton = document.createElement('div')
   let buttonDiv = document.getElementById("buttons")
   innerButton.innerHTML = "click_me"
-  innerButton.className = "mehButton"
+  innerButton.className = "duckButton"
   innerButton.addEventListener('click', () =>  {
     this.money = this.money + this.inc
     this.renderMoney()
