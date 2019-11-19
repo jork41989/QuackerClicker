@@ -3,7 +3,7 @@ class Board{
   constructor(gameDiv) {
   this.money = 1
   this.count = 99
-  this.inc = 1
+  this.inc = .5
   this.gameDivR = gameDiv
   }
 
