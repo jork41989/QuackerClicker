@@ -9,6 +9,26 @@
 
 }
 
+#openUp{
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  left: 300px;
+  background-image: url(./images/arrow.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scaleX(-1);
+  
+}
+
+.closedUp{
+transform: scaleX(1) !important;
+left: 0px !important;
+}
+
+.hideSide{
+  visibility: hidden;
+}
 .mainDiv{
   display: flex;
   flex-direction: row;
@@ -23,23 +43,22 @@
 
 .duckButton{
   height: 300px;
-  width: 265px;
+  width: 300px;
   color:transparent;
-  background-image: url(./images/duck.png);
+  background-image: url(./images/drawDuck.png);
   background-size: cover;
   content: none;
-
+  margin-bottom: 10px;
 }
 
-.batDuck{
-  background-image: url(./images/batDuck.png);
+.robberDuck{
+  background-image: url(./images/Rober.png);
 }
 
 
 .duckButton:active{
-  background-position-x: -8px;
-  width: 296px;
-  background-image: url(./images/duckQuack.png);
+  width: 300px;
+  background-image: url(./images/flying.png);
 }
 
 #money{
@@ -69,6 +88,18 @@
     background: rgba(255, 255, 255, 0.657);
     padding: 20px;
     width: 250px;
+    position: relative;
+    
+ }
+
+ #autoQuackDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+    background: rgba(255, 255, 255, 0.657);
+    padding: 20px;
+    width: 250px;
  }
 
   .upgradeButtonDiv{
@@ -90,7 +121,7 @@
   text-align: center;
   background: rgba(255, 255, 255, 0.657);
   padding: 20px;
-
+  min-width: 200px;
   }
 
   .hidden{
@@ -130,4 +161,8 @@
 
   .disabled{
     background: grey;
+  }
+
+  body{
+    margin: 0;
   }

@@ -9,6 +9,7 @@ class Upgrades {
     this.money = board.money
     this.crumbCost = 10
     this.sliceCost = 100
+    this.hidden = false
   }
   makeCrumbButton(){
     let upgradeButton  = document.getElementById('breadButton')
@@ -22,16 +23,20 @@ class Upgrades {
           this.crumbCost = this.crumbCost * 2;
           this.board.renderMoney()
           this.renderCrumbCost();
-          duck.classList.remove("batDuck");
+          duck.classList.remove("robberDuck");
         } else {
-          duck.classList.add("batDuck");
-          unlock.innerHTML = "To the rescue!";
+          if (!this.board.unlocks.includes("robbed")){
+          duck.classList.add("robberDuck");
+          this.board.money += 100
+          this.board.renderMoney()
+          unlock.innerHTML = "Robbed!";
           unlock.classList.add("unlocked");
+          this.board.unlocks.push("robbed")
           setTimeout(() => { 
             unlock.classList.remove("unlocked");
             unlock.innerHTML = "hide Quick";
           }, 1000)
-
+        }
         }
       }, false);
 
@@ -79,12 +84,30 @@ class Upgrades {
     }
   }
 
+  hideMenu(){
+    let hideButton = document.getElementById("openUp")
+    let upDiv = document.getElementById("upgrades")
+    hideButton.addEventListener("click", () => {
+      
+      if(!this.hidden){
+        console.log(upDiv)
+        upDiv.classList.add("hideSide")
+        hideButton.classList.add("closedUp")
+        this.hidden = true;
+      } else {
+        upDiv.classList.remove("hideSide")
+        hideButton.classList.remove("closedUp")
+        this.hidden = false;
+      }
+    })
+  }
 
   start(){
     this.renderSliceCost()
     this.renderCrumbCost()
     this.makeCrumbButton();
     this.sliceButtonClick();
+    this.hideMenu()
   }
   
 }
