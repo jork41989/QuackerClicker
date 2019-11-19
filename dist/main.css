@@ -28,6 +28,11 @@
   content: none;
 }
 
+.batDuck{
+  background-image: url(./images/batDuck.png);
+}
+
+
 .duckButton:active{
   background-position-x: -8px;
   width: 296px;
@@ -65,4 +70,35 @@
   align-self: flex-end;
   margin-right: 10px;
   text-align: center;
+  }
+
+  #unlocks{
+
+    width: 200px;
+    text-align: center;
+    position: absolute;
+    top: 19%;
+    left: 25%;
+    opacity: 0;
+    border-radius: 25px;
+  outline: none;
+
+  text-align: center;
+  color: hsla(0,0%,20%,1);
+  text-shadow: hsla(0,0%,40%,.5) 0 -1px 0, hsla(0,0%,100%,.6) 0 2px 1px;
+  
+  background-color: rgb(206, 209, 8);
+  box-shadow: inset rgb(124, 112, 2) 0  0px 0px 4px, /* border */
+    inset rgba(124, 112, 0, 0.8) 0 -1px 5px 4px, /* soft SD */
+    inset hsla(0,0%,0%, .25) 0 -1px 0px 7px, /* bottom SD */
+    inset hsla(0,0%,100%,.7) 0  2px 1px 7px, /* top HL */
+    
+    hsla(0,0%, 0%,.15) 0 -5px 6px 4px, /* outer SD */
+    hsla(0,0%,100%,.5) 0  5px 6px 4px; /* outer HL */ 
+  
+  transition: color .2s;
+  }
+
+  .unlocked{
+    opacity: 1 !important;
   }

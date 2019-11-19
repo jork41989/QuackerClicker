@@ -13,18 +13,27 @@ class Upgrades {
   }
   makeUpgradeButton(){
     let upgradeButton  = document.getElementById('breadButton')
-    let duck = document.getElementById('duckButton')
+    let duck = document.getElementById('duck')
+    let unlock = document.getElementById('unlocks')
     upgradeButton.className = "mehButton"
-    console.log(duck)
+    
       upgradeButton.addEventListener('click', () => {
         if (this.board.money >= this.cost) {
           this.board.money = this.board.money - 10
           this.board.inc = this.board.inc + (this.board.inc / 2)
-          this.cost = this.cost * 2
-          this.renderMoney()
-          this.renderCost()
+          this.cost = this.cost * 2;
+          this.renderMoney();
+          this.renderCost();
+          duck.classList.remove("batDuck");
         } else {
-          
+          duck.classList.add("batDuck");
+          unlock.innerHTML = "To the rescue!";
+          unlock.classList.add("unlocked");
+          setTimeout(() => { 
+            unlock.classList.remove("unlocked");
+            unlock.innerHTML = "hide Quick";
+          }, 1000)
+
         }
       }, false);
 
