@@ -13,8 +13,9 @@ class Upgrades {
   }
   makeUpgradeButton(){
     let upgradeButton  = document.getElementById('breadButton')
+    let duck = document.getElementById('duckButton')
     upgradeButton.className = "mehButton"
-   
+    console.log(duck)
       upgradeButton.addEventListener('click', () => {
         if (this.board.money >= this.cost) {
           this.board.money = this.board.money - 10
@@ -22,6 +23,8 @@ class Upgrades {
           this.cost = this.cost * 2
           this.renderMoney()
           this.renderCost()
+        } else {
+          
         }
       }, false);
 

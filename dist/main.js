@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const  Upgrades = __webpack_require__(/*! ./upgrades */ \"./src/upgrades.js\") \nclass Board{\n  constructor(gameDiv) {\n  this.money = 1\n  this.count = 99\n  this.inc = .5\n  this.gameDivR = gameDiv\n  }\n\n\nmakeButton(){\n  console.log(this)\n  let innerButton = document.createElement('div')\n  let buttonDiv = document.getElementById(\"buttons\")\n  innerButton.innerHTML = \"click_me\"\n  innerButton.className = \"duckButton\"\n  innerButton.addEventListener('click', () =>  {\n    this.money = this.money + this.inc\n    this.renderMoney()\n  }, false);\n return buttonDiv.appendChild( innerButton)\n}\n\nrenderMoney(){\n  let moneyCount = document.getElementById('money')\n  moneyCount.innerHTML = this.money\n}\n\nstart() {\n  this.renderMoney()\n  this.makeButton()\n  const Uper = new Upgrades(this)\n  this.Uper = Uper\n  Uper.start()\n}\n}\n\nmodule.exports = Board;\n\n//# sourceURL=webpack:///./src/board.js?");
+eval("const  Upgrades = __webpack_require__(/*! ./upgrades */ \"./src/upgrades.js\") \nclass Board{\n  constructor(gameDiv) {\n  this.money = 1\n  this.count = 99\n  this.inc = .5\n  this.gameDivR = gameDiv\n  }\n\n\nmakeButton(){\n  console.log(this)\n  let innerButton = document.getElementById(\"duck\")\n  innerButton.addEventListener('click', () =>  {\n    this.money = this.money + this.inc\n    this.renderMoney()\n  }, false);\n}\n\nrenderMoney(){\n  let moneyCount = document.getElementById('money')\n  moneyCount.innerHTML = this.money\n}\n\nstart() {\n  this.renderMoney()\n  this.makeButton()\n  const Uper = new Upgrades(this)\n  this.Uper = Uper\n  Uper.start()\n}\n}\n\nmodule.exports = Board;\n\n//# sourceURL=webpack:///./src/board.js?");
 
 /***/ }),
 
@@ -104,7 +104,7 @@ eval("const  Upgrades = __webpack_require__(/*! ./upgrades */ \"./src/upgrades.j
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const Board = __webpack_require__(/*! ./board */ \"./src/board.js\")\n\ndocument.addEventListener(\"DOMContentLoaded\", function () {\n  const gameDiv = document.getElementById(\"game\")\n  console.log(gameDiv)\n  const board = new Board(gameDiv)\n  board.start()\n})\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("const Board = __webpack_require__(/*! ./board */ \"./src/board.js\")\n\ndocument.addEventListener(\"DOMContentLoaded\", function () {\n  const gameDiv = document.getElementById(\"game\")\n  const board = new Board(gameDiv)\n  board.start()\n})\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -115,7 +115,7 @@ eval("const Board = __webpack_require__(/*! ./board */ \"./src/board.js\")\n\ndo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("class Upgrades {\n\n  constructor(board) {\n    this.board = board\n    this.gameDivR = board.gameDiv\n    this.inc = board.inc\n    this.money = board.money\n    this.cost = 10\n  }\n  renderMoney() {\n    let moneyCount = document.getElementById('money')\n    moneyCount.innerHTML = this.board.money\n  }\n  makeUpgradeButton(){\n    let upgradeButton  = document.getElementById('breadButton')\n    upgradeButton.className = \"mehButton\"\n   \n      upgradeButton.addEventListener('click', () => {\n        if (this.board.money >= this.cost) {\n          this.board.money = this.board.money - 10\n          this.board.inc = this.board.inc + (this.board.inc / 2)\n          this.cost = this.cost * 2\n          this.renderMoney()\n          this.renderCost()\n        }\n      }, false);\n\n  }\n\n  renderCost(){\n\n    let upgradeButtonCost = document.getElementById(\"upgradeLabel\")\n    upgradeButtonCost.innerHTML = `cost: ${this.cost}`\n    upgradeButtonCost.id = \"upgradeLabel\"\n\n\n  }\n\n  start(){\n    this.renderCost()\n    this.makeUpgradeButton();\n  }\n  \n}\n\nmodule.exports = Upgrades;\n\n//# sourceURL=webpack:///./src/upgrades.js?");
+eval("class Upgrades {\n\n  constructor(board) {\n    this.board = board\n    this.gameDivR = board.gameDiv\n    this.inc = board.inc\n    this.money = board.money\n    this.cost = 10\n  }\n  renderMoney() {\n    let moneyCount = document.getElementById('money')\n    moneyCount.innerHTML = this.board.money\n  }\n  makeUpgradeButton(){\n    let upgradeButton  = document.getElementById('breadButton')\n    let duck = document.getElementById('duckButton')\n    upgradeButton.className = \"mehButton\"\n    console.log(duck)\n      upgradeButton.addEventListener('click', () => {\n        if (this.board.money >= this.cost) {\n          this.board.money = this.board.money - 10\n          this.board.inc = this.board.inc + (this.board.inc / 2)\n          this.cost = this.cost * 2\n          this.renderMoney()\n          this.renderCost()\n        } else {\n          \n        }\n      }, false);\n\n  }\n\n  renderCost(){\n\n    let upgradeButtonCost = document.getElementById(\"upgradeLabel\")\n    upgradeButtonCost.innerHTML = `cost: ${this.cost}`\n    upgradeButtonCost.id = \"upgradeLabel\"\n\n\n  }\n\n  start(){\n    this.renderCost()\n    this.makeUpgradeButton();\n  }\n  \n}\n\nmodule.exports = Upgrades;\n\n//# sourceURL=webpack:///./src/upgrades.js?");
 
 /***/ })
 
