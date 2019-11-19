@@ -29,7 +29,7 @@ class Upgrades {
           duck.classList.add("robberDuck");
           this.board.money += 100
           this.board.renderMoney()
-          unlock.innerHTML = "Robbed!";
+          unlock.innerHTML = "Robber Ducky!";
           unlock.classList.add("unlocked");
           this.board.unlocks.push("robbed")
           setTimeout(() => { 

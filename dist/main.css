@@ -78,7 +78,8 @@ left: 0px !important;
     flex-direction: column;
       position: absolute;
   bottom: 0;
-  left: 42%;
+  left: 40%;
+  right: 40%;
  }
  #upgrades{
    display: flex;
