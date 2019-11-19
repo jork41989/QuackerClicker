@@ -86,6 +86,17 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/auto_quacks.js":
+/*!****************************!*\
+  !*** ./src/auto_quacks.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("class AutoQuack {\n  constructor(board) {\n    this.board = board\n    this.ducklingCost = 100\n    this.ducklingMPS = .1\n    this.ducklingCount = 0\n  }\n\n\n  DucklingCostRender(){\n    let ducklingCostDiv = document.getElementById(\"ducklingCost\")\n    ducklingCostDiv.innerHTML = `Cost: ${this.ducklingCost}`\n  }\n\n  DucklingCountRender(){\n    let ducklingCountDiv = document.getElementById(\"ducklingCount\")\n    ducklingCountDiv.innerHTML = `Ducklings: ${this.ducklingCount}`\n  }\n\n  DucklingButton(){\n    let ducklingButton = document.getElementById(\"ducklingButton\")\n    ducklingButton.addEventListener(\"click\", () => {\n      if(this.board.money >= this.ducklingCost){\n        console.log(\"quack\")\n        this.board.money = this.board.money - this.ducklingCost\n        this.ducklingCost = this.ducklingCost * 2\n        this.ducklingCount = this.ducklingCount + 1\n        this.DucklingCostRender()\n        this.DucklingCountRender()\n        this.board.renderMoney()\n        if(this.ducklingCount === 1){\n          this.DucklingPS()\n        }\n      }\n    })\n  }\n\n  DucklingPS(){\n    if(this.ducklingCount >= 1){\n      setInterval(() =>{\n        this.board.money = this.board.money + (this.ducklingCount * this.ducklingMPS)\n        this.board.renderMoney()\n      }, 1000)\n    }\n  }\n\n  start(){\n    this.DucklingCostRender()\n    this.DucklingCountRender()\n    this.DucklingButton()\n  }\n\n}\n\nmodule.exports = AutoQuack;\n\n//# sourceURL=webpack:///./src/auto_quacks.js?");
+
+/***/ }),
+
 /***/ "./src/board.js":
 /*!**********************!*\
   !*** ./src/board.js ***!
@@ -93,7 +104,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const  Upgrades = __webpack_require__(/*! ./upgrades */ \"./src/upgrades.js\") \nclass Board{\n  constructor(gameDiv) {\n  this.money = 1\n  this.count = 99\n  this.inc = .5\n  this.gameDivR = gameDiv\n  }\n\n\nmakeButton(){\n  console.log(this)\n  let innerButton = document.getElementById(\"duck\")\n  innerButton.addEventListener('click', () =>  {\n    this.money = this.money + this.inc\n    this.renderMoney()\n  }, false);\n}\n\nrenderMoney(){\n  let moneyCount = document.getElementById('money')\n  moneyCount.innerHTML = this.money\n}\n\nstart() {\n  this.renderMoney()\n  this.makeButton()\n  const Uper = new Upgrades(this)\n  this.Uper = Uper\n  Uper.start()\n}\n}\n\nmodule.exports = Board;\n\n//# sourceURL=webpack:///./src/board.js?");
+eval("const  Upgrades = __webpack_require__(/*! ./upgrades */ \"./src/upgrades.js\") \nconst AutoQuack = __webpack_require__(/*! ./auto_quacks */ \"./src/auto_quacks.js\")\nclass Board{\n  constructor(gameDiv) {\n  this.money = 300\n  this.count = 99\n  this.inc = .5\n  this.gameDivR = gameDiv\n  }\n  renderMoney() {\n    let moneyCount = document.getElementById('money')\n    moneyCount.innerHTML = this.money.toFixed(2)\n  }\n\nmakeButton(){\n  console.log(this)\n  let innerButton = document.getElementById(\"duck\")\n  innerButton.addEventListener('click', () =>  {\n    this.money = this.money + this.inc\n    this.renderMoney()\n  }, false);\n}\n\n\n\nstart() {\n  this.renderMoney()\n  this.makeButton()\n  const Uper = new Upgrades(this)\n  const Auto = new AutoQuack(this)\n  this.Uper = Uper\n  Uper.start()\n  Auto.start()\n}\n}\n\nmodule.exports = Board;\n\n//# sourceURL=webpack:///./src/board.js?");
 
 /***/ }),
 
@@ -115,7 +126,7 @@ eval("const Board = __webpack_require__(/*! ./board */ \"./src/board.js\")\n\ndo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("class Upgrades {\n\n  constructor(board) {\n    this.board = board\n    this.gameDivR = board.gameDiv\n    this.inc = board.inc\n    this.money = board.money\n    this.cost = 10\n  }\n  renderMoney() {\n    let moneyCount = document.getElementById('money')\n    moneyCount.innerHTML = this.board.money\n  }\n  makeUpgradeButton(){\n    let upgradeButton  = document.getElementById('breadButton')\n    let duck = document.getElementById('duck')\n    let unlock = document.getElementById('unlocks')\n    upgradeButton.className = \"mehButton\"\n    \n      upgradeButton.addEventListener('click', () => {\n        if (this.board.money >= this.cost) {\n          this.board.money = this.board.money - 10\n          this.board.inc = this.board.inc + (this.board.inc / 2)\n          this.cost = this.cost * 2;\n          this.renderMoney();\n          this.renderCost();\n          duck.classList.remove(\"batDuck\");\n        } else {\n          duck.classList.add(\"batDuck\");\n          unlock.innerHTML = \"To the rescue!\";\n          unlock.classList.add(\"unlocked\");\n          setTimeout(() => { \n            unlock.classList.remove(\"unlocked\");\n            unlock.innerHTML = \"hide Quick\";\n          }, 1000)\n\n        }\n      }, false);\n\n  }\n\n  renderCost(){\n\n    let upgradeButtonCost = document.getElementById(\"upgradeLabel\")\n    upgradeButtonCost.innerHTML = `cost: ${this.cost}`\n    upgradeButtonCost.id = \"upgradeLabel\"\n\n\n  }\n\n  start(){\n    this.renderCost()\n    this.makeUpgradeButton();\n  }\n  \n}\n\nmodule.exports = Upgrades;\n\n//# sourceURL=webpack:///./src/upgrades.js?");
+eval("class Upgrades {\n\n  constructor(board) {\n    this.board = board\n    this.gameDivR = board.gameDiv\n    this.inc = board.inc\n    this.crumbInc = .1\n    this.money = board.money\n    this.crumbCost = 10\n  }\n  makeCrumbButton(){\n    let upgradeButton  = document.getElementById('breadButton')\n    let duck = document.getElementById('duck')\n    let unlock = document.getElementById('unlocks')\n    upgradeButton.className = \"mehButton\"\n    \n      upgradeButton.addEventListener('click', () => {\n        if (this.board.money >= this.crumbCost) {\n          this.board.money = this.board.money - this.crumbCost\n          this.board.inc = this.board.inc + this.crumbInc\n          this.crumbCost = this.crumbCost * 2;\n          this.board.renderMoney()\n          this.renderCost();\n          duck.classList.remove(\"batDuck\");\n        } else {\n          duck.classList.add(\"batDuck\");\n          unlock.innerHTML = \"To the rescue!\";\n          unlock.classList.add(\"unlocked\");\n          setTimeout(() => { \n            unlock.classList.remove(\"unlocked\");\n            unlock.innerHTML = \"hide Quick\";\n          }, 1000)\n\n        }\n      }, false);\n\n  }\n\n  renderCost(){\n\n    let upgradeButtonCost = document.getElementById(\"upgradeLabel\")\n    upgradeButtonCost.innerHTML = `cost: ${this.crumbCost}`\n    upgradeButtonCost.id = \"upgradeLabel\"\n\n\n  }\n\n  start(){\n    this.renderCost()\n    this.makeCrumbButton();\n  }\n  \n}\n\nmodule.exports = Upgrades;\n\n//# sourceURL=webpack:///./src/upgrades.js?");
 
 /***/ })
 

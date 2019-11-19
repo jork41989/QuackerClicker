@@ -4,25 +4,22 @@ class Upgrades {
     this.board = board
     this.gameDivR = board.gameDiv
     this.inc = board.inc
+    this.crumbInc = .1
     this.money = board.money
-    this.cost = 10
+    this.crumbCost = 10
   }
-  renderMoney() {
-    let moneyCount = document.getElementById('money')
-    moneyCount.innerHTML = this.board.money
-  }
-  makeUpgradeButton(){
+  makeCrumbButton(){
     let upgradeButton  = document.getElementById('breadButton')
     let duck = document.getElementById('duck')
     let unlock = document.getElementById('unlocks')
     upgradeButton.className = "mehButton"
     
       upgradeButton.addEventListener('click', () => {
-        if (this.board.money >= this.cost) {
-          this.board.money = this.board.money - 10
-          this.board.inc = this.board.inc + (this.board.inc / 2)
-          this.cost = this.cost * 2;
-          this.renderMoney();
+        if (this.board.money >= this.crumbCost) {
+          this.board.money = this.board.money - this.crumbCost
+          this.board.inc = this.board.inc + this.crumbInc
+          this.crumbCost = this.crumbCost * 2;
+          this.board.renderMoney()
           this.renderCost();
           duck.classList.remove("batDuck");
         } else {
@@ -42,7 +39,7 @@ class Upgrades {
   renderCost(){
 
     let upgradeButtonCost = document.getElementById("upgradeLabel")
-    upgradeButtonCost.innerHTML = `cost: ${this.cost}`
+    upgradeButtonCost.innerHTML = `cost: ${this.crumbCost}`
     upgradeButtonCost.id = "upgradeLabel"
 
 
@@ -50,7 +47,7 @@ class Upgrades {
 
   start(){
     this.renderCost()
-    this.makeUpgradeButton();
+    this.makeCrumbButton();
   }
   
 }
