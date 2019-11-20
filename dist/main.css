@@ -18,7 +18,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   transform: scaleX(-1);
-  
+  cursor: pointer;
 }
 
 .closedUp{
@@ -301,7 +301,29 @@ left: 0px !important;
   font-size: 16px;
   height: 30px;
   width: 160px;
-  
+
+}
+
+
+.autoQuackDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cost{
+  font-family: 'Oswald', sans-serif;
+  margin: 2px;
+}
+
+.counts{
+  font-family: 'Oswald', sans-serif;
+  font-size: medium;
+  margin: 2px;
+}
+
+.noMoney{
+  color: rgb(240, 155, 155);
 }
   body{
     margin: 0;

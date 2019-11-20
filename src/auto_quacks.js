@@ -31,6 +31,7 @@ class AutoQuack {
 
   DucklingButton(){
     let ducklingButton = document.getElementById("ducklingButton")
+    let ducklingCostL = document.getElementById("ducklingCost")
     ducklingButton.addEventListener("click", () => {
       if(this.board.money >= this.ducklingCost){
         console.log("quack")
@@ -43,6 +44,11 @@ class AutoQuack {
         if(this.ducklingCount === 1){
           this.DucklingPS()
         }
+      } else{
+        ducklingCostL.classList.add("noMoney")
+        setTimeout(() => {
+          ducklingCostL.classList.remove("noMoney")
+        }, 1000)
       }
     })
   }

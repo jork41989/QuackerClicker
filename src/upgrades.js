@@ -17,6 +17,7 @@ class Upgrades {
     let upgradeButton  = document.getElementById('breadButton')
     let duck = document.getElementById('duck')
     let unlock = document.getElementById('unlocks')
+    let costP = document.getElementById('upgradeLabel')
     
       upgradeButton.addEventListener('click', () => {
         if (this.board.money >= this.crumbCost) {
@@ -41,6 +42,11 @@ class Upgrades {
             unlock.classList.remove("unlocked");
             unlock.innerHTML = "hide Quick";
           }, 1000)
+        } else {
+            costP.classList.add("noMoney")
+            setTimeout(() => {
+              costP.classList.remove("noMoney")
+            }, 1000)
         }
         }
       }, false);
@@ -49,6 +55,7 @@ class Upgrades {
 
   sliceButtonClick (){
     let sliceButton = document.getElementById('sliceButton')
+    let costP = document.getElementById('sliceUpgradeLabel')
     sliceButton.addEventListener('click', () => {
       if (this.board.money >= this.sliceCost) {
         this.board.money = this.board.money - this.sliceCost
@@ -56,6 +63,11 @@ class Upgrades {
         this.sliceCost = this.sliceCost * 2;
         this.board.renderMoney()
         this.renderSliceCost();
+      } else{
+        costP.classList.add("noMoney")
+        setTimeout(()=>{
+          costP.classList.remove("noMoney")
+        }, 1000)
       }
     }
     )
