@@ -26,6 +26,7 @@ class Upgrades {
           this.crumbCost = this.crumbCost * 2;
           this.board.renderMoney()
           this.renderCrumbCost();
+          this.QPCCalc();
         } else {
           if (!this.board.unlocks.includes("robbed")){
           this.board.money += 100
@@ -63,6 +64,7 @@ class Upgrades {
         this.sliceCost = this.sliceCost * 2;
         this.board.renderMoney()
         this.renderSliceCost();
+        this.QPCCalc();
       } else{
         costP.classList.add("noMoney")
         setTimeout(()=>{
@@ -74,6 +76,7 @@ class Upgrades {
   }
   loafButtonClick() {
     let loafButton = document.getElementById('loafButton')
+    let costP = document.getElementById('loafUpgradeLabel')
     loafButton.addEventListener('click', () => {
       if (this.board.money >= this.loafCost) {
         this.board.money = this.board.money - this.loafCost
@@ -81,6 +84,12 @@ class Upgrades {
         this.loafCost = this.loafCost * 2;
         this.board.renderMoney()
         this.renderLoafCost();
+        this.QPCCalc();
+      } else {
+        costP.classList.add("noMoney")
+        setTimeout(() => {
+          costP.classList.remove("noMoney")
+        }, 1000)
       }
     }
     )
@@ -144,6 +153,12 @@ class Upgrades {
     })
   }
 
+  QPCCalc(){
+    let QPCp = document.getElementById("QPCp")
+    let QPCTotal = this.board.inc
+    QPCp.innerHTML = `Quacks Per Click: ${QPCTotal}`
+  }
+
   start(){
     this.renderSliceCost()
     this.renderCrumbCost()
@@ -151,7 +166,8 @@ class Upgrades {
     this.makeCrumbButton();
     this.sliceButtonClick();
     this.loafButtonClick();
-    this.hideMenu()
+    this.hideMenu();
+    this.QPCCalc();
   }
   
 }

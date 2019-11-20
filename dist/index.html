@@ -35,14 +35,24 @@
       firebase.analytics();
     </script>
     <div id="game">
+    
       <h1 id=title>Quacker Clicker</h1> 
-      <div id="breadTotal">
-        <p>Quacks</p>
-        <p id="money"></p>
+      <div id="infoDiv">
+          <div id="QPCDiv">
+            <p id="QPCp">Quacks Per Click: QUACK</p>
+          </div>
+      
+        <div id="breadTotal">
+          <p>Quacks</p>
+          <p id="money"></p>
+        </div>
+
+        <div id="QPSDiv">
+          <p id="QPSp">Quacks Per Second: HONK</p>
+        </div>
       </div>
       
     <div class="mainDiv">
-      
       
       <div id="upgrades">
         
@@ -68,7 +78,7 @@
       </div>
 
 
-      
+
       <div id="openAuto"></div>
       <div id="autoQuackDiv">
         <p> Auto Quackers</p>
@@ -84,7 +94,7 @@
           </div>
         </div>
       
-      <div id="ducksDiv" class="hidden">
+      <div id="ducksDiv" class="autoQuackDiv hidden">
         <p id="ducksCost" class="cost">
           Cost: 0
         </p>

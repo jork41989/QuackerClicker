@@ -42,6 +42,7 @@ class AutoQuack {
         this.DucklingCostRender()
         this.DucklingCountRender()
         this.board.renderMoney()
+        this.QPSCalc()
         if(this.ducklingCount === 1){
           this.DucklingPS()
         }
@@ -64,6 +65,7 @@ class AutoQuack {
         this.DucksCostRender()
         this.DucksCountRender()
         this.board.renderMoney()
+        this.QPSCalc()
         if (this.ducksCount === 1) {
           this.DucksPS()
         }
@@ -87,6 +89,12 @@ class AutoQuack {
         this.board.renderMoney()
       }, this.board.tick)
     }
+  }
+
+  QPSCalc(){
+    let QPS = document.getElementById("QPSp")
+    let TotalQPS = (this.ducklingCount * this.ducklingMPS) + (this.ducksCount * this.ducksMPS)
+    QPS.innerHTML = `Quacks Per Second: ${TotalQPS}`
   }
 
   priceCheck(){
@@ -136,6 +144,7 @@ class AutoQuack {
     this.DucksCountRender()
     this.DucksButton()
     this.hideMenu()
+    this.QPSCalc();
   }
 
 }
