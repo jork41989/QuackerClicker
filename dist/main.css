@@ -49,6 +49,7 @@ left: 0px !important;
   background-size: cover;
   content: none;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .robberDuck{
@@ -118,6 +119,7 @@ left: 0px !important;
     background: black;
     color: white;
     border-radius: 25px;
+    cursor: pointer;
   }
 
   #breadTotal{
@@ -166,6 +168,7 @@ left: 0px !important;
 
   .disabled{
     background: grey;
+    cursor: wait;
   }
 
   #HONK{
@@ -225,6 +228,7 @@ left: 0px !important;
     left: 10%;
     background-image: url(./images/flying.png);
     background-size: cover;
+    cursor: pointer;
   }
 
   #duckMenu{
