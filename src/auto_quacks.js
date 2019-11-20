@@ -7,6 +7,7 @@ class AutoQuack {
     this.ducksCost = 1000
     this.ducksMPS = 1
     this.ducksCount = 0
+    this.hidden = false
   }
 
 
@@ -108,6 +109,24 @@ class AutoQuack {
     }
   }
 
+  hideMenu() {
+    let hideButton = document.getElementById("openAuto")
+    let upDiv = document.getElementById("autoQuackDiv")
+    hideButton.addEventListener("click", () => {
+
+      if (!this.hidden) {
+        console.log(upDiv)
+        upDiv.classList.add("hideSide")
+        hideButton.classList.add("closedAuto")
+        this.hidden = true;
+      } else {
+        upDiv.classList.remove("hideSide")
+        hideButton.classList.remove("closedAuto")
+        this.hidden = false;
+      }
+    })
+  }
+
   start(){
     this.DucklingCostRender()
     this.DucklingCountRender()
@@ -116,6 +135,7 @@ class AutoQuack {
     this.DucksCostRender()
     this.DucksCountRender()
     this.DucksButton()
+    this.hideMenu()
   }
 
 }

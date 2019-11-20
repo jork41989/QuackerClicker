@@ -222,7 +222,26 @@
 .noMoney{
   color: rgb(240, 155, 155);
 }
-  body{
+
+
+#openAuto{
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  right: 300px;
+  background-image: url(./images/arrow.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scaleX(1);
+  cursor: pointer;
+}
+.closedAuto{
+transform: scaleX(-1) !important;
+right: 0px !important;
+}
+
+
+body{
     margin: 0;
   }
 
