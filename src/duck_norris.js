@@ -54,10 +54,18 @@ class DuckNorris {
   catchGoose(){
     let gooseDiv = document.getElementById("HONK")
     let duck = document.getElementById('duck')
+    let unlock = document.getElementById('unlocks')
     gooseDiv.addEventListener("click", () => {
       this.caught = true;
       gooseDiv.classList.add("hideHonk")
       duck.classList.add("duckNorris")
+      this.board.unlocks.push("DuckNorris")
+      unlock.innerHTML = "Duck Norris!";
+      unlock.classList.add("unlocked");
+      setTimeout(() => {
+        unlock.classList.remove("unlocked");
+        unlock.innerHTML = "hide Quick";
+      }, 1000)
     })
   }
 
