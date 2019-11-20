@@ -167,7 +167,7 @@ left: 0px !important;
   }
 
   .disabled{
-    background: grey;
+    background: grey !important;
     cursor: wait;
   }
 
@@ -288,6 +288,20 @@ left: 0px !important;
     top: -11px;
     bottom: -5px;
     content: "";
+}
+
+.autoQuack{
+  background: rgb(105, 189, 214);
+  font-size: 16px;
+  height: 30px;
+}
+
+.manualQuack{
+  background: rgb(231, 233, 115);
+  font-size: 16px;
+  height: 30px;
+  width: 160px;
+  
 }
   body{
     margin: 0;
