@@ -12,6 +12,7 @@ class Board{
     let moneyCount = document.getElementById('money')
     moneyCount.innerHTML = this.money.toFixed(2)
     this.Uper.priceCheck()
+    this.Auto.priceCheck()
   }
 
 makeButton(){
@@ -30,6 +31,7 @@ start() {
   const Uper = new Upgrades(this)
   const Auto = new AutoQuack(this)
   this.Uper = Uper
+  this.Auto = Auto
   this.makeButton()
   this.renderMoney()
   Uper.start()

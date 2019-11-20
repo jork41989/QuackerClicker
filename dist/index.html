@@ -7,6 +7,29 @@
   </head>
 
   <body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
+    
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-analytics.js"></script>
+    
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAaO68ld1_epQOncLuHANEilrAqmx9Zw6Y",
+        authDomain: "quackerclicker.firebaseapp.com",
+        databaseURL: "https://quackerclicker.firebaseio.com",
+        projectId: "quackerclicker",
+        storageBucket: "quackerclicker.appspot.com",
+        messagingSenderId: "482264507310",
+        appId: "1:482264507310:web:b2af0b69956c8b8eb85e3f",
+        measurementId: "G-GYNWXSCZQ8"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
     <div id="game">
       <h1 id=title>Quacker Clicker</h1> 
       <div id="breadTotal">
@@ -46,6 +69,19 @@
             <button id="ducklingButton" class="breadButtons">mini quack</button>
           </div>
         </div>
+      
+      <div id="ducksDiv">
+        <p id="ducksCost">
+          Cost: 0
+        </p>
+        <p id="ducksCount">
+          Ducks: HONK
+        </p>
+        <div>
+          <button id="ducksButton" class="breadButtons">Regular Quack</button>
+        </div>
+      </div>
+      </div>
       </div>
     </div>
     <div id="unlocks">Alert</div>
