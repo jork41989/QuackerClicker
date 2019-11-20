@@ -3,7 +3,7 @@ const AutoQuack = require("./auto_quacks")
 const DuckNorris = require("./duck_norris")
 class Board{
   constructor(gameDiv) {
-  this.money = 100
+  this.money = 0
   this.count = 99
   this.inc = .5
   this.gameDivR = gameDiv

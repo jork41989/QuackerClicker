@@ -6,9 +6,11 @@ class Upgrades {
     this.inc = board.inc
     this.crumbInc = .1
     this.sliceInc = 1
+    this.loafInc = 100
     this.money = board.money
     this.crumbCost = 10
     this.sliceCost = 100
+    this.loafCost = 1000
     this.hidden = false
   }
   makeCrumbButton(){
@@ -59,6 +61,19 @@ class Upgrades {
     }
     )
   }
+  loafButtonClick() {
+    let loafButton = document.getElementById('loafButton')
+    loafButton.addEventListener('click', () => {
+      if (this.board.money >= this.loafCost) {
+        this.board.money = this.board.money - this.loafCost
+        this.board.inc = this.board.inc + this.loafInc
+        this.loafCost = this.loafCost * 2;
+        this.board.renderMoney()
+        this.renderLoafCost();
+      }
+    }
+    )
+  }
 
   renderCrumbCost(){
     let upgradeButtonCost = document.getElementById("upgradeLabel")
@@ -67,6 +82,10 @@ class Upgrades {
   renderSliceCost(){
     let sliceCostLabel = document.getElementById("sliceUpgradeLabel")
     sliceCostLabel.innerHTML = `Cost ${this.sliceCost}`
+  }
+  renderLoafCost() {
+    let loafCostLabel = document.getElementById("loafUpgradeLabel")
+    loafCostLabel.innerHTML = `Cost ${this.loafCost}`
   }
 
   priceCheck(){
@@ -85,6 +104,14 @@ class Upgrades {
     } else if (this.board.money < this.crumbCost){
       let crumbButton = document.getElementById('breadButton')
       crumbButton.classList.add("disabled")
+    }
+    if (this.board.money >= this.loafCost) {
+      let loafDiv = document.getElementById("loafDiv")
+      loafDiv.classList.remove("hidden")
+      loafButton.classList.remove("disabled")
+    } else if (this.board.money < this.loafCost) {
+      let loafButton = document.getElementById('loafButton')
+      loafButton.classList.add("disabled")
     }
   }
 
@@ -109,8 +136,10 @@ class Upgrades {
   start(){
     this.renderSliceCost()
     this.renderCrumbCost()
+    this.renderLoafCost();
     this.makeCrumbButton();
     this.sliceButtonClick();
+    this.loafButtonClick();
     this.hideMenu()
   }
   
