@@ -156,7 +156,7 @@ class Upgrades {
   QPCCalc(){
     let QPCp = document.getElementById("QPCp")
     let QPCTotal = this.board.inc
-    QPCp.innerHTML = `Quacks Per Click: ${QPCTotal}`
+    QPCp.innerHTML = `Quacks Per Click: ${QPCTotal.toFixed(2)}`
   }
 
   start(){
