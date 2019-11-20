@@ -55,6 +55,10 @@ left: 0px !important;
   background-image: url(./images/Rober.png);
 }
 
+.duckNorris{
+  background-image: url(./images/duckNorris.png);
+}
+
 
 .duckButton:active{
   width: 300px;
@@ -162,6 +166,34 @@ left: 0px !important;
 
   .disabled{
     background: grey;
+  }
+
+  #HONK{
+    position: absolute;
+    background: url(./images/goose.png);
+    height: 100px;
+    width: 100px;
+    z-index: 97;
+    cursor: url(./images/hiya.png), default;
+  }
+
+  .hideHonk{
+    display: none;
+  }
+
+  .honk1{
+    top: 20%;
+    left: 66%;
+  }
+
+  .honk2{
+    top: 66%;
+    left: 30%;
+  }
+
+  .honk3{
+    top: 30%;
+    left: 85%;
   }
 
   body{

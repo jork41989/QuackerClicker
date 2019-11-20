@@ -51,7 +51,6 @@ class AutoQuack {
     let ducksButton = document.getElementById("ducksButton")
     ducksButton.addEventListener("click", () => {
       if (this.board.money >= this.ducksCost) {
-        console.log("quack")
         this.board.money = this.board.money - this.ducksCost
         this.ducksCost = this.ducksCost * 2
         this.ducksCount = this.ducksCount + 1
@@ -94,7 +93,9 @@ class AutoQuack {
     }
     if (this.board.money >= this.ducksCost) {
       let ducksButton = document.getElementById("ducksButton")
+      let ducksDiv = document.getElementById("ducksDiv")
       ducksButton.classList.remove("disabled")
+      ducksDiv.classList.remove("hidden")
     } else if (this.board.money < this.ducksCost) {
       let ducksButton = document.getElementById("ducksButton")
       ducksButton.classList.add("disabled")
@@ -108,6 +109,7 @@ class AutoQuack {
 
     this.DucksCostRender()
     this.DucksCountRender()
+    this.DucksButton()
   }
 
 }
