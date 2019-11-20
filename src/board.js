@@ -5,7 +5,7 @@ const Ducks = require("./ducks")
 class Board{
   constructor(gameDiv) {
   this.money = 0
-  this.count = 99
+  this.tick = 1000
   this.inc = .5
   this.gameDivR = gameDiv
   this.unlocks = []
@@ -19,9 +19,11 @@ class Board{
 
 makeButton(){
   let innerButton = document.getElementById("duck")
+  let QuackSound = document.getElementById("QuackSound")
   innerButton.addEventListener("click", () =>  {
     this.money = this.money + this.inc
     this.renderMoney()
+    QuackSound.play();
   });
 }
 

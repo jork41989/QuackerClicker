@@ -1,0 +1,27 @@
+#duckMenuButton{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    top: 3%;
+    left: 10%;
+    background-image: url(./images/flying.png);
+    background-size: cover;
+    cursor: pointer;
+  }
+
+  #duckMenu{
+    position: absolute;
+    background: white;
+    top: 3%;
+    left: 15%;
+    padding: 20px;
+    border-radius: 25px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+  }
+ .DuckMenuItem{
+    margin-top: 10px;
+    background: rgb(163, 233, 136);
+    font-size: 12px;
+  }

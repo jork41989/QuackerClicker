@@ -12,14 +12,15 @@ class DuckNorris {
       this.goose1();
       
       
-      
     }
   }
 
   goose1(){
     let gooseDiv = document.getElementById("HONK")
+    let HonkSound = document.getElementById("HonkSound")
     gooseDiv.classList.remove("hideHonk")
     gooseDiv.classList.add("honk1")
+    HonkSound.play();
     setTimeout(() => {
       gooseDiv.classList.remove("honk1")
       gooseDiv.classList.add("hideHonk")
@@ -30,8 +31,10 @@ class DuckNorris {
 
   goose2(){
     let gooseDiv = document.getElementById("HONK")
+    let HonkSound = document.getElementById("HonkSound")
     gooseDiv.classList.add("honk2")
     gooseDiv.classList.remove("hideHonk")
+    HonkSound.play();
     setTimeout(() => {
       gooseDiv.classList.remove("honk2")
       gooseDiv.classList.add("hideHonk")
@@ -42,8 +45,10 @@ class DuckNorris {
 
   goose3(){
     let gooseDiv = document.getElementById("HONK")
+    let HonkSound = document.getElementById("HonkSound")
     gooseDiv.classList.add("honk3")
     gooseDiv.classList.remove("hideHonk")
+    HonkSound.play();
     setTimeout(() => {
       gooseDiv.classList.remove("honk3")
       gooseDiv.classList.add("hideHonk")

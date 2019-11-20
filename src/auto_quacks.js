@@ -75,7 +75,7 @@ class AutoQuack {
       setInterval(() =>{
         this.board.money = this.board.money + (this.ducklingCount * this.ducklingMPS)
         this.board.renderMoney()
-      }, 1000)
+      }, this.board.tick)
     }
   }
 
@@ -84,7 +84,7 @@ class AutoQuack {
       setInterval(() => {
         this.board.money = this.board.money + (this.ducksCount * this.ducksMPS)
         this.board.renderMoney()
-      }, 1000)
+      }, this.board.tick)
     }
   }
 

@@ -1,0 +1,25 @@
+
+.duckButton{
+  height: 300px;
+  width: 300px;
+  color:transparent;
+  background-image: url(./images/drawDuck.png);
+  background-size: cover;
+  content: none;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.robberDuck{
+  background-image: url(./images/Rober.png);
+}
+
+.duckNorris{
+  background-image: url(./images/duckNorris.png);
+}
+
+
+.duckButton:active{
+  width: 300px;
+  background-image: url(./images/flying.png);
+}

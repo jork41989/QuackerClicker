@@ -1,0 +1,59 @@
+#openUp{
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  left: 300px;
+  background-image: url(./images/arrow.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scaleX(-1);
+  cursor: pointer;
+}
+
+.closedUp{
+transform: scaleX(1) !important;
+left: 0px !important;
+}
+
+#upgrades{
+   display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+    background: rgba(255, 255, 255, 0.657);
+    padding: 20px;
+    width: 250px;
+    position: relative;
+    
+ }
+
+  .upgradeButtonDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .breadButtons{
+    width: 100px;
+    background: black;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+
+  #breadTotal{
+  align-self: center;
+  margin-right: 10px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.657);
+  padding: 20px;
+  min-width: 200px;
+  }
+
+  .manualQuack{
+  background: rgb(231, 233, 115);
+  font-size: 16px;
+  height: 30px;
+  width: 160px;
+
+}
