@@ -1,6 +1,7 @@
 const  Upgrades = require("./upgrades") 
 const AutoQuack = require("./auto_quacks")
 const DuckNorris = require("./duck_norris")
+const Ducks = require("./ducks")
 class Board{
   constructor(gameDiv) {
   this.money = 0
@@ -39,13 +40,16 @@ start() {
   const Uper = new Upgrades(this)
   const Auto = new AutoQuack(this)
   const DuckN = new DuckNorris(this)
+  const DucksL = new Ducks (this)
   this.Uper = Uper
   this.Auto = Auto
   this.DuckN = DuckN
+  this.DucksL = Ducks
   this.makeButton()
   this.renderMoney()
   Uper.start()
   Auto.start()
+  DucksL.start()
   
   this.story()
 }

@@ -217,6 +217,24 @@ left: 0px !important;
     background: rgba(0, 0, 0, 0.418);
   }
 
+  #duckMenuButton{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    top: 3%;
+    left: 10%;
+    background-image: url(./images/flying.png);
+    background-size: cover;
+  }
+
+  #duckMenu{
+    position: absolute;
+    background: white;
+    top: 3%;
+    left: 15%;
+    padding: 10px;
+  }
+
   body{
     margin: 0;
   }

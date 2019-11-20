@@ -25,7 +25,6 @@ class Upgrades {
           this.crumbCost = this.crumbCost * 2;
           this.board.renderMoney()
           this.renderCrumbCost();
-          duck.classList.remove("robberDuck");
         } else {
           if (!this.board.unlocks.includes("robbed")){
           this.board.money += 100
