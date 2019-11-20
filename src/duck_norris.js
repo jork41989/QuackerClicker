@@ -58,7 +58,13 @@ class DuckNorris {
     gooseDiv.addEventListener("click", () => {
       this.caught = true;
       gooseDiv.classList.add("hideHonk")
+      if (duck.classList.length === 1){
       duck.classList.add("duckNorris")
+      } else {
+        
+        duck.classList = "duckButton duckNorris"
+      }
+
       this.board.unlocks.push("DuckNorris")
       unlock.innerHTML = "Duck Norris!";
       unlock.classList.add("unlocked");

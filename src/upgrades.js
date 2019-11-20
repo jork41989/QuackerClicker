@@ -26,9 +26,13 @@ class Upgrades {
           duck.classList.remove("robberDuck");
         } else {
           if (!this.board.unlocks.includes("robbed")){
-          duck.classList.add("robberDuck");
           this.board.money += 100
           this.board.renderMoney()
+            if (duck.classList.length === 1) {
+              duck.classList.add("robberDuck")
+            } else {
+              duck.classList = "duckButton robberDuck"
+            }
           unlock.innerHTML = "Robber Ducky!";
           unlock.classList.add("unlocked");
           this.board.unlocks.push("robbed")
