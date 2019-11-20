@@ -94,7 +94,7 @@ class AutoQuack {
   QPSCalc(){
     let QPS = document.getElementById("QPSp")
     let TotalQPS = (this.ducklingCount * this.ducklingMPS) + (this.ducksCount * this.ducksMPS)
-    QPS.innerHTML = `Quacks Per Second: ${TotalQPS}`
+    QPS.innerHTML = `Quacks Per Second: ${TotalQPS.toFixed(2)}`
   }
 
   priceCheck(){
