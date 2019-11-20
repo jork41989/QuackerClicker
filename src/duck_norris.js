@@ -65,6 +65,8 @@ class DuckNorris {
       setTimeout(() => {
         unlock.classList.remove("unlocked");
         unlock.innerHTML = "hide Quick";
+        this.board.money += 300
+        this.board.renderMoney()
       }, 1000)
     })
   }
