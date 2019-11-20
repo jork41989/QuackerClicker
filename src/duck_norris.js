@@ -60,11 +60,12 @@ class DuckNorris {
     let gooseDiv = document.getElementById("HONK")
     let duck = document.getElementById('duck')
     let unlock = document.getElementById('unlocks')
+    let caughtSound = document.getElementById('GotEm')
     gooseDiv.addEventListener("click", () => {
       this.caught = true;
       gooseDiv.classList.add("hideHonk")
       if (duck.classList.length === 1){
-      duck.classList.add("duckNorris")
+        duck.classList.add("duckNorris")
       } else {
         
         duck.classList = "duckButton duckNorris"
@@ -73,6 +74,7 @@ class DuckNorris {
       this.board.unlocks.push("DuckNorris")
       unlock.innerHTML = "Duck Norris!";
       unlock.classList.add("unlocked");
+      caughtSound.play();
       setTimeout(() => {
         unlock.classList.remove("unlocked");
         unlock.innerHTML = "hide Quick";
