@@ -16,7 +16,6 @@ class Board{
   }
 
 makeButton(){
-  console.log(this)
   let innerButton = document.getElementById("duck")
   innerButton.addEventListener('click', () =>  {
     this.money = this.money + this.inc
