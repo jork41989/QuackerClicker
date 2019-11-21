@@ -35,7 +35,6 @@ class AutoQuack {
     let ducklingCostL = document.getElementById("ducklingCost")
     ducklingButton.addEventListener("click", () => {
       if(this.board.money >= this.ducklingCost){
-        console.log("quack")
         this.board.money = this.board.money - this.ducklingCost
         this.ducklingCost = this.ducklingCost * 2
         this.ducklingCount = this.ducklingCount + 1
@@ -94,7 +93,7 @@ class AutoQuack {
   QPSCalc(){
     let QPS = document.getElementById("QPSp")
     let TotalQPS = (this.ducklingCount * this.ducklingMPS) + (this.ducksCount * this.ducksMPS)
-    QPS.innerHTML = `Quacks Per Second: ${TotalQPS.toFixed(2)}`
+    QPS.innerHTML = `Quacks Per Tick: ${TotalQPS.toFixed(2)}`
   }
 
   priceCheck(){

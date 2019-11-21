@@ -2,9 +2,10 @@ const  Upgrades = require("./upgrades")
 const AutoQuack = require("./auto_quacks")
 const DuckNorris = require("./duck_norris")
 const Ducks = require("./ducks")
+const Tick = require("./ticks")
 class Board{
   constructor(gameDiv) {
-  this.money = 0
+  this.money = 2000
   this.tick = 1000
   this.inc = .5
   this.gameDivR = gameDiv
@@ -15,6 +16,7 @@ class Board{
     moneyCount.innerHTML = this.money.toFixed(2)
     this.Uper.priceCheck()
     this.Auto.priceCheck()
+    this.TickL.priceCheck()
   }
 
 makeButton(){
@@ -42,17 +44,19 @@ start() {
   const Uper = new Upgrades(this)
   const Auto = new AutoQuack(this)
   const DuckN = new DuckNorris(this)
-  const DucksL = new Ducks (this)
+  const DucksL = new Ducks(this)
+  const TickL = new Tick(this)
   this.Uper = Uper
   this.Auto = Auto
   this.DuckN = DuckN
   this.DucksL = Ducks
+  this.TickL = TickL
   this.makeButton()
   this.renderMoney()
   Uper.start()
   Auto.start()
   DucksL.start()
-  
+  TickL.start()
   this.story()
 }
 }
