@@ -9,6 +9,24 @@
 
 }
 
+#save{
+    position: absolute;
+    height: 50px;
+    width: 100px;
+    top: 3%;
+    right: 10%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+}
+
+.utilIcons{
+  height: 50px;
+    width: 50px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
 #QPCDiv{
     align-self: center;
     margin-left: 33px;

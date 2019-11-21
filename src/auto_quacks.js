@@ -144,6 +144,8 @@ class AutoQuack {
     this.DucksButton()
     this.hideMenu()
     this.QPSCalc();
+    this.DucksPS()
+    this.DucklingPS()
   }
 
 }
