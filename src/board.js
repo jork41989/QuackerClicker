@@ -5,7 +5,7 @@ const Ducks = require("./ducks")
 const Tick = require("./ticks")
 class Board{
   constructor(gameDiv) {
-  this.money = 999999
+  this.money = 0
   this.tick = 1000
   this.inc = .5
   this.multi = 1
