@@ -82,8 +82,13 @@ save(){
 
 saveButton(){
   let saveDiv = document.getElementById("saveIcon")
+  let saveMessage = document.getElementById("saveDiv")
   saveDiv.addEventListener("click", () => {
     this.save()
+    saveMessage.classList.remove("hidden")
+    setTimeout(() => {
+      saveMessage.classList.add("hidden")
+    }, 1000)
   })
 }
 
