@@ -47,7 +47,7 @@ class Ducks {
   moneyCheck(){
     let duck = document.getElementById('duck')
     let unlock = document.getElementById('unlocks')
-    if(this.board.money >= 1000000){
+    if (this.board.money >= 1000000 && !this.board.unlocks.includes("Golden")){
       duck.classList = "duckButton goldenGoose"
       this.board.unlocks.push("Golden")
       unlock.innerHTML = "Gooooooold!";
