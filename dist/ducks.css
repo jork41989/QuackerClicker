@@ -18,6 +18,9 @@
   background-image: url(./images/duckNorris.png);
 }
 
+.goldenGoose{
+  background-image: url(./images/Golden.png);
+}
 
 .duckButton:active{
   width: 300px;

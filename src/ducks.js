@@ -14,11 +14,16 @@ class Ducks {
     if (this.board.unlocks.includes("DuckNorris")) {
       norris.classList.remove("hidden")
     }
+    let golden = document.getElementById("menuGolden")
+    if (this.board.unlocks.includes("Golden")) {
+      golden.classList.remove("hidden")
+    }
   }
   menuOptionsButtons(){
     let robber = document.getElementById("menuRobber")
     let norris = document.getElementById("menuNorris")
     let regular = document.getElementById("menuRegular")
+    let golden = document.getElementById("menuGolden")
     let duck = document.getElementById('duck')
     
     regular.addEventListener("click", () => {
@@ -33,9 +38,27 @@ class Ducks {
       duck.classList = "duckButton duckNorris"
     })
 
+    golden.addEventListener("click", () => {
+      duck.classList = "duckButton goldenGoose"
+    })
+
   }
 
-  
+  moneyCheck(){
+    let duck = document.getElementById('duck')
+    let unlock = document.getElementById('unlocks')
+    if(this.board.money >= 1000000){
+      duck.classList = "duckButton goldenGoose"
+      this.board.unlocks.push("Golden")
+      unlock.innerHTML = "Gooooooold!";
+      unlock.classList.add("unlocked");
+      setTimeout(() => {
+        unlock.classList.remove("unlocked");
+        unlock.innerHTML = "hide Quick";
+      }, 1000)
+
+    }
+  }
 
   menuButton(){
     let menu = document.getElementById("duckMenu")

@@ -5,7 +5,7 @@ const Ducks = require("./ducks")
 const Tick = require("./ticks")
 class Board{
   constructor(gameDiv) {
-  this.money = 0
+  this.money = 999999
   this.tick = 1000
   this.inc = .5
   this.multi = 1
@@ -18,6 +18,7 @@ class Board{
     this.Uper.priceCheck()
     this.Auto.priceCheck()
     this.TickL.priceCheck()
+    this.DucksL.moneyCheck()
   }
 
   upgradeMulti(){
@@ -76,7 +77,6 @@ save(){
     upData: upData,
     tickData: tickData
   }
-  console.log(this.TickL)
   window.localStorage.setItem('quacks', JSON.stringify(honkSave))
 }
 
@@ -122,7 +122,7 @@ saveStart({boardData, autoData, upData, tickData}){
   this.Uper = Uper
   this.Auto = Auto
   this.DuckN = DuckN
-  this.DucksL = Ducks
+  this.DucksL = DucksL
   this.TickL = TickL
 
   this.Uper.crumbCost = upData.crumbCost
@@ -138,12 +138,14 @@ saveStart({boardData, autoData, upData, tickData}){
 
   this.saveButton()
   this.makeButton()
-  this.renderMoney()
+  
   Uper.start()
   Auto.start()
   DucksL.start()
   TickL.start()
+  this.renderMoney()
   this.story()
+  
   this.resetButton()
 
 }
@@ -159,17 +161,18 @@ start() {
   this.Uper = Uper
   this.Auto = Auto
   this.DuckN = DuckN
-  this.DucksL = Ducks
+  this.DucksL = DucksL
   this.TickL = TickL
   this.saveButton()
   this.makeButton()
   this.resetButton()
-  this.renderMoney()
   Uper.start()
   Auto.start()
   DucksL.start()
   TickL.start()
+  this.renderMoney()
   this.story()
+  
 }
 }
 
