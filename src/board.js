@@ -9,6 +9,7 @@ class Board{
   this.tick = 1000
   this.inc = .5
   this.multi = 1
+  this.clicks = 0
   this.gameDivR = gameDiv
   this.unlocks = []
   }
@@ -26,12 +27,24 @@ class Board{
   }
 
 makeButton(){
-  let innerButton = document.getElementById("duck")
+  let duck = document.getElementById("duck")
   let QuackSound = document.getElementById("QuackSound")
-  innerButton.addEventListener("click", () =>  {
+  let unlock = document.getElementById('unlocks')
+  duck.addEventListener("click", () =>  {
     this.money = this.money + this.inc
+    this.clicks += 1
     this.renderMoney()
     QuackSound.play();
+    if(this.clicks === 3){
+      duck.classList = duck.classList = "duckButton gooseHonk"
+      unlock.innerHTML = "Duck Duck Goose";
+      this.unlocks.push("HONNNNK")
+      unlock.classList.add("unlocked");
+      setTimeout(() => {
+        unlock.classList.remove("unlocked");
+        unlock.innerHTML = "hide Quick";
+      }, 1000)
+    }
   });
 }
 
@@ -51,7 +64,8 @@ save(){
     tick: this.tick,
     inc: this.inc,
     multi: this.multi,
-    unlocks: this.unlocks
+    unlocks: this.unlocks,
+    clicks: this.clicks
   }
 
   const autoData ={
@@ -119,6 +133,7 @@ saveStart({boardData, autoData, upData, tickData}){
   this.inc = boardData.inc
   this.multi = boardData.multi
   this.unlocks = boardData.unlocks
+  this.clicks = boardData.clicks || 0
   const Uper = new Upgrades(this)
   const Auto = new AutoQuack(this)
   const DuckN = new DuckNorris(this)

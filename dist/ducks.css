@@ -22,6 +22,10 @@
   background-image: url(./images/Golden.png);
 }
 
+.gooseHonk{
+  background-image: url(./images/gooseHonk.png);
+}
+
 .duckButton:active{
   width: 300px;
   background-image: url(./images/flying.png);

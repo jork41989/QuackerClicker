@@ -18,12 +18,18 @@ class Ducks {
     if (this.board.unlocks.includes("Golden")) {
       golden.classList.remove("hidden")
     }
+
+    let goose = document.getElementById("menuGoose")
+    if (this.board.unlocks.includes("HONNNNK")) {
+      goose.classList.remove("hidden")
+    }
   }
   menuOptionsButtons(){
     let robber = document.getElementById("menuRobber")
     let norris = document.getElementById("menuNorris")
     let regular = document.getElementById("menuRegular")
     let golden = document.getElementById("menuGolden")
+    let goose = document.getElementById("menuGoose")
     let duck = document.getElementById('duck')
     
     regular.addEventListener("click", () => {
@@ -42,6 +48,9 @@ class Ducks {
       duck.classList = "duckButton goldenGoose"
     })
 
+    goose.addEventListener("click", () => {
+      duck.classList = duck.classList = "duckButton gooseHonk"
+    })
   }
 
   moneyCheck(){
