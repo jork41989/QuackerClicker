@@ -16,8 +16,11 @@ class Tick {
       if(this.board.money >= this.cost){
         this.board.money -= this.cost
         this.board.tick = this.board.tick / 2
+        this.board.multi = this.board.multi * 2
         this.cost = this.cost * 10
+        console.log(this.board.multi)
         this.tickCost()
+        this.board.upgradeMulti()
         this.board.renderMoney()
       } else{
         QSDiv.classList.add("noMoney")

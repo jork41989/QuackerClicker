@@ -5,9 +5,10 @@ const Ducks = require("./ducks")
 const Tick = require("./ticks")
 class Board{
   constructor(gameDiv) {
-  this.money = 0
+  this.money = 2000
   this.tick = 1000
   this.inc = .5
+  this.multi = 1
   this.gameDivR = gameDiv
   this.unlocks = []
   }
@@ -17,6 +18,10 @@ class Board{
     this.Uper.priceCheck()
     this.Auto.priceCheck()
     this.TickL.priceCheck()
+  }
+
+  upgradeMulti(){
+    this.Auto.QPSCalc()
   }
 
 makeButton(){
