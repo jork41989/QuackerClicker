@@ -101,7 +101,23 @@
     width: 250px;
  }
 
+ .storyButton{
+   display: flex;
+    flex-direction: row;
+ }
+
+ .storyMute{
+   background-color: rgb(139, 74, 0);
+   font-size: 16px;
+  height: 30px !important;
+  margin-left: 5px;
+ }
  
+ .storyRegular{
+    background-color: darkcyan;
+   font-size: 16px;
+  height: 30px !important;
+ }
 
   .hidden{
     display: none !important;
@@ -172,9 +188,12 @@
   }
 
   #story{
+    display: flex;
+    flex-direction: column;
     position: relative;
     justify-content: center;
     justify-self: center;
+    align-items: center;
     width: 20%;
     left: 40%;
     background: white;

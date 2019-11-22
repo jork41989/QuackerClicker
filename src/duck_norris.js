@@ -7,8 +7,7 @@ class DuckNorris {
   gooseSeason(){
     let gooseDiv = document.getElementById("HONK")
     if(!this.caught){
-      console.log("honk")
-      
+
       this.goose1();
       
       

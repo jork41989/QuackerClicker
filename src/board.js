@@ -48,15 +48,43 @@ makeButton(){
   });
 }
 
-story(){
+
+
+muteStory(){
+  let storyMute = document.getElementById("storyMute")
+  let QuackSound = document.getElementById("QuackSound")
+  let HonkSound = document.getElementById("HonkSound")
+  let caughtSound = document.getElementById('GotEm')
   let modal = document.getElementById("modalStory");
-  modal.addEventListener("click", () => {
+
+  storyMute.addEventListener("click", () => {
+
+    QuackSound.muted = true;
+    HonkSound.muted = true;
+    caughtSound.muted = true;
     modal.classList.add("hidden");
     this.DuckN.start()
+   
   })
- 
 }
 
+regularStory(){
+  let storyRegular = document.getElementById("storyRegular")
+  let QuackSound = document.getElementById("QuackSound")
+  let HonkSound = document.getElementById("HonkSound")
+  let caughtSound = document.getElementById('GotEm')
+  let modal = document.getElementById("modalStory");
+  
+  storyRegular.addEventListener("click", () => {
+  
+    QuackSound.volume = 0.5;
+    HonkSound.volume = 0.5;
+    caughtSound.volume = 0.5;
+    modal.classList.add("hidden");
+    this.DuckN.start()
+
+  })
+}
 
 save(){
   const boardData = {
@@ -158,13 +186,14 @@ saveStart({boardData, autoData, upData, tickData}){
 
   this.saveButton()
   this.makeButton()
-  
+  this.muteStory()
+  this.regularStory()
   Uper.start()
   Auto.start()
   DucksL.start()
   TickL.start()
   this.renderMoney()
-  this.story()
+
   
   this.resetButton()
 
@@ -186,12 +215,14 @@ start() {
   this.saveButton()
   this.makeButton()
   this.resetButton()
+  this.muteStory()
+  this.regularStory()
   Uper.start()
   Auto.start()
   DucksL.start()
   TickL.start()
   this.renderMoney()
-  this.story()
+
   
 }
 }

@@ -8,8 +8,8 @@ class Upgrades {
     this.sliceInc = 1
     this.loafInc = 100
     this.money = board.money
-    this.crumbCost = 10
-    this.sliceCost = 100
+    this.crumbCost = 5
+    this.sliceCost = 50
     this.loafCost = 1000
     this.hidden = false
   }
