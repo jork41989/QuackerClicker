@@ -2,10 +2,10 @@ class AutoQuack {
   constructor(board) {
     this.board = board
     this.ducklingCost = 100
-    this.ducklingMPS = .1
+    this.ducklingMPS = 1
     this.ducklingCount = 0
     this.ducksCost = 1000
-    this.ducksMPS = 1
+    this.ducksMPS = 10
     this.ducksCount = 0
     this.hidden = false
   }
