@@ -334,6 +334,40 @@ right: 0px !important;
     font-size: 50px;
 }
 
+
+#duckchivementsButton{
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  top: 3%;
+  left: 5%;
+  background-image: url('./images/quackchivements.png');
+  background-size: cover;
+  cursor: pointer;
+}
+
+
+#duckchivements{
+    position: absolute;
+    top: 3%;
+    left: 9%;
+    background: white;
+    padding: 12px;
+    border-radius: 15px;
+}
+
+.goals{
+    font-family: 'Oswald', sans-serif;
+    margin: 2px;
+    font-size: 20px;
+    background: teal;
+    padding: 10px;
+    color: rgb(212, 212, 212);
+    margin: 5px;
+    border-radius: 15px;
+}
+
+
 body{
     margin: 0;
   }

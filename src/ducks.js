@@ -7,21 +7,40 @@ class Ducks {
 
   menuOptions(){
     let robber = document.getElementById("menuRobber")
+    let goal1 = document.getElementById("goal1")
+    let goal1A = document.getElementById("goal1Unlock")
     if (this.board.unlocks.includes("robbed")){
       robber.classList.remove("hidden")
+      goal1.classList.add("hidden")
+      goal1A.classList.remove("hidden")
     }
     let norris = document.getElementById("menuNorris")
+    let goal2 = document.getElementById("goal2")
+    let goal2A = document.getElementById("goal2Unlock")
     if (this.board.unlocks.includes("DuckNorris")) {
       norris.classList.remove("hidden")
+      goal2.classList.add("hidden")
+      goal2A.classList.remove("hidden")
     }
     let golden = document.getElementById("menuGolden")
+    
+    let goal4 = document.getElementById("goal4")
+    let goal4A = document.getElementById("goal4Unlock")
     if (this.board.unlocks.includes("Golden")) {
       golden.classList.remove("hidden")
+      
+      goal4.classList.add("hidden")
+      goal4A.classList.remove("hidden")
     }
 
     let goose = document.getElementById("menuGoose")
+    let goal3 = document.getElementById("goal3")
+    let goal3A = document.getElementById("goal3Unlock")
     if (this.board.unlocks.includes("HONNNNK")) {
       goose.classList.remove("hidden")
+      goal3.classList.add("hidden")
+      goal3A.classList.remove("hidden")
+      
     }
   }
   menuOptionsButtons(){
@@ -68,6 +87,7 @@ class Ducks {
 
     }
   }
+
 
   menuButton(){
     let menu = document.getElementById("duckMenu")

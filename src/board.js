@@ -3,6 +3,7 @@ const AutoQuack = require("./auto_quacks")
 const DuckNorris = require("./duck_norris")
 const Ducks = require("./ducks")
 const Tick = require("./ticks")
+const Achivements = require("./achivements")
 class Board{
   constructor(gameDiv) {
   this.money = 0
@@ -167,6 +168,7 @@ saveStart({boardData, autoData, upData, tickData}){
   const DuckN = new DuckNorris(this)
   const DucksL = new Ducks(this)
   const TickL = new Tick(this)
+  const Achive = new Achivements(this)
   this.Uper = Uper
   this.Auto = Auto
   this.DuckN = DuckN
@@ -192,6 +194,7 @@ saveStart({boardData, autoData, upData, tickData}){
   Auto.start()
   DucksL.start()
   TickL.start()
+  Achive.start()
   this.renderMoney()
 
   
@@ -207,6 +210,7 @@ start() {
   const DuckN = new DuckNorris(this)
   const DucksL = new Ducks(this)
   const TickL = new Tick(this)
+  const Achive = new Achivements(this)
   this.Uper = Uper
   this.Auto = Auto
   this.DuckN = DuckN
@@ -221,6 +225,7 @@ start() {
   Auto.start()
   DucksL.start()
   TickL.start()
+  Achive.start()
   this.renderMoney()
 
   
