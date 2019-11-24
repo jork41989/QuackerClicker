@@ -16,7 +16,15 @@ class Board{
   }
   renderMoney() {
     let moneyCount = document.getElementById('money')
-    moneyCount.innerHTML = this.money.toFixed(2)
+    let total = this.money.toFixed(2)
+
+    if (total <= 10000000){
+      moneyCount.innerHTML = total
+    } else {
+      moneyCount.innerHTML = this.money.toExponential(2)
+    }
+
+    
     this.Uper.priceCheck()
     this.Auto.priceCheck()
     this.TickL.priceCheck()

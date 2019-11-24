@@ -16,7 +16,12 @@ class AutoQuack {
 
   DucklingCostRender(){
     let ducklingCostDiv = document.getElementById("ducklingCost")
-    ducklingCostDiv.innerHTML = `Cost: ${this.ducklingCost}`
+    if (this.ducklingCost <= 1000000){
+      ducklingCostDiv.innerHTML = `Cost: ${this.ducklingCost}`
+    } else {
+      let costExp = this.ducklingCost.toExponential(2)
+      ducklingCostDiv.innerHTML = `Cost: ${costExp}`
+    }
   }
   DucksCostRender() {
     let ducksCostDiv = document.getElementById("ducksCost")
@@ -129,7 +134,7 @@ class AutoQuack {
 
   QPSCalc(){
     let QPS = document.getElementById("QPSp")
-    let TotalQPS = ((this.ducklingCount * this.ducklingMPS) + (this.ducksCount * this.ducksMPS)) * this.board.multi
+    let TotalQPS = ((this.ducklingCount * this.ducklingMPS) + (this.ducksCount * this.ducksMPS) + (this.duckHorseCount * this.duckHorseMPS)) * this.board.multi
     QPS.innerHTML = `Quacks Per Second: ${TotalQPS.toFixed(2)}`
   }
 
