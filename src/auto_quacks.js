@@ -47,7 +47,7 @@ class AutoQuack {
     ducklingButton.addEventListener("click", () => {
       if(this.board.money >= this.ducklingCost){
         this.board.money = this.board.money - this.ducklingCost
-        this.ducklingCost = this.ducklingCost * 2
+        this.ducklingCost = this.ducklingCost * 1.2
         this.ducklingCount = this.ducklingCount + 1
         this.DucklingCostRender()
         this.DucklingCountRender()
@@ -70,7 +70,7 @@ class AutoQuack {
     ducksButton.addEventListener("click", () => {
       if (this.board.money >= this.ducksCost) {
         this.board.money = this.board.money - this.ducksCost
-        this.ducksCost = this.ducksCost * 2
+        this.ducksCost = this.ducksCost * 1.2
         this.ducksCount = this.ducksCount + 1
         this.DucksCostRender()
         this.DucksCountRender()
@@ -87,7 +87,7 @@ class AutoQuack {
     duckHorseButton.addEventListener("click", () => {
       if (this.board.money >= this.duckHorseCost) {
         this.board.money = this.board.money - this.duckHorseCost
-        this.duckHorseCost = this.duckHorseCost * 2
+        this.duckHorseCost = this.duckHorseCost * 1.2
         this.duckHorseCount = this.duckHorseCount + 1
         this.DuckHorseCostRender()
         this.DuckHorseCountRender()

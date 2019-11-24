@@ -23,7 +23,7 @@ class Upgrades {
         if (this.board.money >= this.crumbCost) {
           this.board.money = this.board.money - this.crumbCost
           this.board.inc = this.board.inc + this.crumbInc
-          this.crumbCost = this.crumbCost * 2;
+          this.crumbCost = this.crumbCost * 1.2;
           this.board.renderMoney()
           this.renderCrumbCost();
           this.QPCCalc();
@@ -61,7 +61,7 @@ class Upgrades {
       if (this.board.money >= this.sliceCost) {
         this.board.money = this.board.money - this.sliceCost
         this.board.inc = this.board.inc + this.sliceInc
-        this.sliceCost = this.sliceCost * 2;
+        this.sliceCost = this.sliceCost * 1.2;
         this.board.renderMoney()
         this.renderSliceCost();
         this.QPCCalc();
@@ -81,7 +81,7 @@ class Upgrades {
       if (this.board.money >= this.loafCost) {
         this.board.money = this.board.money - this.loafCost
         this.board.inc = this.board.inc + this.loafInc
-        this.loafCost = this.loafCost * 2;
+        this.loafCost = this.loafCost * 1.2;
         this.board.renderMoney()
         this.renderLoafCost();
         this.QPCCalc();
