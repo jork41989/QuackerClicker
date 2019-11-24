@@ -2,6 +2,7 @@
   "name": "quackerclicker",
   "version": "0.0.1",
   "dependencies": {
-    "firebase": "^7.4.0"
+    "firebase": "^7.4.0",
+    "firebaseui": "^4.3.0"
   }
 }

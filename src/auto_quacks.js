@@ -7,6 +7,9 @@ class AutoQuack {
     this.ducksCost = 1000
     this.ducksMPS = 10
     this.ducksCount = 0
+    this.duckHorseCost = 10000
+    this.duckHorseMPS = 100
+    this.duckHorseCount = 0
     this.hidden = false
   }
 
@@ -19,6 +22,10 @@ class AutoQuack {
     let ducksCostDiv = document.getElementById("ducksCost")
     ducksCostDiv.innerHTML = `Cost: ${this.ducksCost}`
   }
+  DuckHorseCostRender() {
+    let duckHorseCostDiv = document.getElementById("horseSizedDuckCost")
+    duckHorseCostDiv.innerHTML = `Cost: ${this.duckHorseCost}`
+  }
 
   
   DucklingCountRender(){
@@ -28,6 +35,10 @@ class AutoQuack {
   DucksCountRender() {
     let ducksCountDiv = document.getElementById("ducksCount")
     ducksCountDiv.innerHTML = `Ducks: ${this.ducksCount}`
+  }
+  DuckHorseCountRender() {
+    let duckHorseCountDiv = document.getElementById("horseSizedDuckCount")
+    duckHorseCountDiv.innerHTML = `Ducks: ${this.duckHorseCount}`
   }
 
   DucklingButton(){
@@ -71,6 +82,23 @@ class AutoQuack {
       }
     })
   }
+  DuckHorseButton() {
+    let duckHorseButton = document.getElementById("horseSizedDuckButton")
+    duckHorseButton.addEventListener("click", () => {
+      if (this.board.money >= this.duckHorseCost) {
+        this.board.money = this.board.money - this.duckHorseCost
+        this.duckHorseCost = this.duckHorseCost * 2
+        this.duckHorseCount = this.duckHorseCount + 1
+        this.DuckHorseCostRender()
+        this.DuckHorseCountRender()
+        this.board.renderMoney()
+        this.QPSCalc()
+        if (this.duckHorseCount === 1) {
+          this.DuckHorsePS()
+        }
+      }
+    })
+  }
 
   DucklingPS(){
     if(this.ducklingCount >= 1){
@@ -85,6 +113,15 @@ class AutoQuack {
     if (this.ducksCount >= 1) {
       setInterval(() => {
         this.board.money = this.board.money + (this.ducksCount * this.ducksMPS)
+        this.board.renderMoney()
+      }, this.board.tick)
+    }
+  }
+
+  DuckHorsePS() {
+    if (this.duckHorseCount >= 1) {
+      setInterval(() => {
+        this.board.money = this.board.money + (this.duckHorseCount * this.duckHorseMPS)
         this.board.renderMoney()
       }, this.board.tick)
     }
@@ -114,6 +151,16 @@ class AutoQuack {
       let ducksButton = document.getElementById("ducksButton")
       ducksButton.classList.add("disabled")
     }
+
+    if (this.board.money >= this.duckHorseCost) {
+      let duckHorseButton = document.getElementById("horseSizedDuckButton")
+      let duckHorseDiv = document.getElementById("horseSizedDuckDiv")
+      duckHorseButton.classList.remove("disabled")
+      duckHorseDiv.classList.remove("hidden")
+    } else if (this.board.money < this.duckHorseCost) {
+      let duckHorseButton = document.getElementById("horseSizedDuckButton")
+      duckHorseButton.classList.add("disabled")
+    }
   }
 
   hideMenu() {
@@ -142,10 +189,16 @@ class AutoQuack {
     this.DucksCostRender()
     this.DucksCountRender()
     this.DucksButton()
+
+    this.DuckHorseCostRender()
+    this.DuckHorseCountRender()
+    this.DuckHorseButton()
+
     this.hideMenu()
     this.QPSCalc();
     this.DucksPS()
     this.DucklingPS()
+    this.DuckHorsePS()
   }
 
 }

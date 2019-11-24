@@ -15,12 +15,13 @@
   <body>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
-    
+
+
     <!-- TODO: Add SDKs for Firebase products that you want to use
          https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-analytics.js"></script>
-    
-    <script>
+
+    <!-- <script>
       // Your web app's Firebase configuration
       var firebaseConfig = {
         apiKey: "AIzaSyAaO68ld1_epQOncLuHANEilrAqmx9Zw6Y",
@@ -35,7 +36,9 @@
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
-    </script>
+    </script> -->
+
+   
     <div id="game">
       <div id="save">
         <img src="./images/saveQuack.png" id="saveIcon" class="utilIcons">
@@ -115,12 +118,26 @@
           <button id="ducksButton" class="push_button autoQuack">Regular Quack</button>
         </div>
       </div>
+
+      <div id="horseSizedDuckDiv" class="autoQuackDiv hidden">
+        <p id="horseSizedDuckCost" class="cost">
+          Cost: 0
+        </p>
+        <p id="horseSizedDuckCount">
+          Horse sized Duck : HONK
+        </p>
+        <div>
+          <button id="horseSizedDuckButton" class="push_button autoQuack">Horse sized Duck</button>
+        </div>
+      </div>
       </div>
       </div>
     </div>
     <div id="unlocks">Alert</div>
       <script type="application/javascript" src="./main.js"></script>
     </div>
+
+    <div id="firebaseui-auth-container"></div>
     <div id="HONK" class="hideHonk" ></div>
     <div id="duckMenuButton">
     </div>
