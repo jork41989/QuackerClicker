@@ -6,7 +6,7 @@ const Tick = require("./ticks")
 const Achivements = require("./achivements")
 class Board{
   constructor(gameDiv) {
-  this.money = 0
+  this.money = 100000
   this.tick = 1000
   this.inc = .5
   this.multi = 1
@@ -111,7 +111,7 @@ save(){
     ducksCount: this.Auto.ducksCount,
     ducksCost: this.Auto.ducksCost,
     horseDuckCost: this.Auto.duckHorseCost,
-    horseDuckCount: this.Auto.horseducksCount
+    horseDuckCount: this.Auto.duckHorseCount
   }
 
   const upData = {
