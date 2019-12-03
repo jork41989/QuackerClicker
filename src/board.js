@@ -109,7 +109,9 @@ save(){
     ducklingCost: this.Auto.ducklingCost,
     ducklingCount: this.Auto.ducklingCount,
     ducksCount: this.Auto.ducksCount,
-    ducksCost: this.Auto.ducksCost
+    ducksCost: this.Auto.ducksCost,
+    horseDuckCost: this.Auto.duckHorseCost,
+    horseDuckCount: this.Auto.horseducksCount
   }
 
   const upData = {
@@ -192,6 +194,8 @@ saveStart({boardData, autoData, upData, tickData}){
   this.Auto.ducksCost = autoData.ducksCost
   this.Auto.ducksCount = autoData.ducksCount
   this.Auto.ducklingCount = autoData.ducklingCount
+  this.Auto.duckHorseCost = autoData.horseDuckCost
+  this.Auto.duckHorseCount = autoData.horseDuckCount
   this.TickL.cost = tickData.tickCost
 
   this.saveButton()
