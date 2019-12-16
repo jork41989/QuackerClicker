@@ -35,3 +35,12 @@ QuakcerClicker is built with a combination of HTML, CSS, JavaScript, and deploye
 ### Auto Quacks
 
 - Created the base logic that was used to structure the AutoQuack class, this includes both JavaScript logic and CSS.
+
+
+### Ducks
+
+- Designed achievements and unlockable ducks, had the graphic for the duck changed based off of achievement.
+
+- Created a menu to display the available achievements and changed their state and internal elements based off of whether they were unlocked.
+
+- Created a menu to display the  users unlocked ducks, allows the user to change their current ducks skin.
