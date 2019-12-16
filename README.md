@@ -1,6 +1,9 @@
-Welcome to Quackerclicker!
+#  Welcome to Quackerclicker!
+![Main](https://i.imgur.com/ArLSmWc.png)
 
-The game will be simple, click the button, gain the curency, buy the stuff. 
+A incremental game that invites you to quack your way through your day! 
+
+[Visit Us](https://quackerclicker.firebaseapp.com/)
 
 Technology
 
