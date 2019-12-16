@@ -18,3 +18,20 @@ Created by:
 QuakcerClicker is built with a combination of HTML, CSS, JavaScript, and deployed using Google Firebase.
 
 
+## Functionality & MVP
+
+### Base Game
+
+- Created a base game element to store Quacks, tick-speed, the curent increment for clicks, and the current multiplier.
+
+### Click Element
+
+- Created the duck-click element and the JavaScript actions to accrue quacks.
+
+### Click Upgrades
+
+- Created the base logic that was used to structure the upgrades class, this includes both JavaScript logic and CSS.
+
+### Auto Quacks
+
+- Created the base logic that was used to structure the AutoQuack class, this includes both JavaScript logic and CSS.
