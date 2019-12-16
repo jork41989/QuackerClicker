@@ -65,6 +65,7 @@ muteStory(){
   let HonkSound = document.getElementById("HonkSound")
   let caughtSound = document.getElementById('GotEm')
   let modal = document.getElementById("modalStory");
+  
 
   storyMute.addEventListener("click", () => {
 
@@ -72,10 +73,56 @@ muteStory(){
     HonkSound.muted = true;
     caughtSound.muted = true;
     modal.classList.add("hidden");
+    this.soundCheck()
     this.DuckN.start()
-   
+    
   })
 }
+
+soundCheck(){
+  let volB = document.getElementById("volIcon")
+  let volNone = './images/mute.png'
+  let vol = './images/volUp.png'
+  let QuackSound = document.getElementById("QuackSound")
+  if(QuackSound.muted === true){
+    volB.src = volNone
+  } else {
+    volB.src = vol
+  }
+  
+}
+
+volButton(){
+  let volB = document.getElementById("volIcon")
+  let QuackSound = document.getElementById("QuackSound")
+  let HonkSound = document.getElementById("HonkSound")
+  let caughtSound = document.getElementById('GotEm')
+  
+  volB.addEventListener("click", () => {
+    if (QuackSound.muted === true) {
+      QuackSound.muted = false;
+      HonkSound.muted = false;
+      caughtSound.muted = false;
+      QuackSound.volume = 0.5;
+      HonkSound.volume = 0.5;
+      caughtSound.volume = 0.5;
+      this.soundCheck()
+      console.log(caughtSound.volume)
+    } else {
+      QuackSound.muted = true;
+      HonkSound.muted = true;
+      caughtSound.muted = true;
+      this.soundCheck()
+    }
+    console.log(HonkSound.volume)
+  })
+
+
+}
+
+
+
+
 
 regularStory(){
   let storyRegular = document.getElementById("storyRegular")
@@ -83,6 +130,8 @@ regularStory(){
   let HonkSound = document.getElementById("HonkSound")
   let caughtSound = document.getElementById('GotEm')
   let modal = document.getElementById("modalStory");
+
+ 
   
   storyRegular.addEventListener("click", () => {
   
@@ -90,6 +139,7 @@ regularStory(){
     HonkSound.volume = 0.5;
     caughtSound.volume = 0.5;
     modal.classList.add("hidden");
+    this.soundCheck()
     this.DuckN.start()
 
   })
@@ -200,6 +250,7 @@ saveStart({boardData, autoData, upData, tickData}){
 
   this.saveButton()
   this.makeButton()
+  this.volButton()
   this.muteStory()
   this.regularStory()
   Uper.start()
@@ -237,6 +288,7 @@ start() {
   Auto.start()
   DucksL.start()
   TickL.start()
+  this.volButton()
   Achive.start()
   this.renderMoney()
 
