@@ -1,4 +1,4 @@
-Welcome to my curently untitled clicker game.
+Welcome to  Quackerclicker game.
 
 The game will be simple, click the button, gain the curency, buy the stuff. 
 
