@@ -174,7 +174,7 @@ class AutoQuack {
     hideButton.addEventListener("click", () => {
 
       if (!this.hidden) {
-        console.log(upDiv)
+
         upDiv.classList.add("hideSide")
         hideButton.classList.add("closedAuto")
         this.hidden = true;

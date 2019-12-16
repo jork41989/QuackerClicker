@@ -18,7 +18,6 @@ class Tick {
         this.board.tick = this.board.tick / 2
         this.board.multi = this.board.multi * 2
         this.cost = this.cost * 10
-        console.log(this.board.multi)
         this.tickCost()
         this.board.upgradeMulti()
         this.board.renderMoney()

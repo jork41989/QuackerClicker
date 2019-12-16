@@ -107,14 +107,14 @@ volButton(){
       HonkSound.volume = 0.5;
       caughtSound.volume = 0.5;
       this.soundCheck()
-      console.log(caughtSound.volume)
+
     } else {
       QuackSound.muted = true;
       HonkSound.muted = true;
       caughtSound.muted = true;
       this.soundCheck()
     }
-    console.log(HonkSound.volume)
+
   })
 
 
