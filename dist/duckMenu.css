@@ -3,7 +3,7 @@
     height: 50px;
     width: 50px;
     top: 3%;
-    left: 10%;
+    left: 7%;
     background-image: url(./images/flying.png);
     background-size: cover;
     cursor: pointer;
@@ -13,7 +13,7 @@
     position: absolute;
     background: white;
     top: 3%;
-    left: 15%;
+    left: 10%;
     padding: 20px;
     border-radius: 25px;
     border: 1px solid black;

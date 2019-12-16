@@ -340,7 +340,7 @@ right: 0px !important;
   height: 50px;
   width: 50px;
   top: 3%;
-  left: 5%;
+  left: 3%;
   background-image: url('./images/quackchivements.png');
   background-size: cover;
   cursor: pointer;
@@ -372,6 +372,23 @@ right: 0px !important;
     border-radius: 15px;
 }
 
+
+.linksDiv{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  width:120px;
+  height: 50px;
+  top:3%;
+  left: 10%;
+}
+
+.linkLogos{
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+  cursor: pointer;
+}
 
 body{
     margin: 0;
