@@ -6,7 +6,7 @@ const Tick = require("./ticks")
 const Achivements = require("./achivements")
 class Board{
   constructor(gameDiv) {
-  this.money = 100000
+  this.money = 0
   this.tick = 1000
   this.inc = .5
   this.multi = 1
