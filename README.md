@@ -36,6 +36,38 @@ QuakcerClicker is built with a combination of HTML, CSS, JavaScript, and deploye
 
 - Created the base logic that was used to structure the AutoQuack class, this includes both JavaScript logic and CSS.
 
+#### Code Sample
+
+- This is a sample of the code used to render the functionality of a AutoQuack element.
+
+``` JavaScript
+
+DucklingButton(){
+    let ducklingButton = document.getElementById("ducklingButton")
+    let ducklingCostL = document.getElementById("ducklingCost")
+    ducklingButton.addEventListener("click", () => {
+      if(this.board.money >= this.ducklingCost){
+        this.board.money = this.board.money - this.ducklingCost
+        this.ducklingCost = (this.ducklingCost * 1.2).toFixed(2)
+        this.ducklingCount = this.ducklingCount + 1
+        this.DucklingCostRender()
+        this.DucklingCountRender()
+        this.board.renderMoney()
+        this.QPSCalc()
+        if(this.ducklingCount === 1){
+          this.DucklingPS()
+        }
+      } else{
+        ducklingCostL.classList.add("noMoney")
+        setTimeout(() => {
+          ducklingCostL.classList.remove("noMoney")
+        }, 1000)
+      }
+    })
+  }
+
+```
+
 
 ### Ducks
 
@@ -44,3 +76,5 @@ QuakcerClicker is built with a combination of HTML, CSS, JavaScript, and deploye
 - Created a menu to display the available achievements and changed their state and internal elements based off of whether they were unlocked.
 
 - Created a menu to display the  users unlocked ducks, allows the user to change their current ducks skin.
+
+- Designed custom graphics for each unlockable Duck from scratch.
