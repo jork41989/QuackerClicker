@@ -1,7 +1,7 @@
 
 .duckButton{
-  height: 300px;
-  width: 300px;
+  height: 400px;
+  width: 400px;
   color:transparent;
   background-image: url(./images/drawDuck.png);
   background-size: cover;
@@ -28,7 +28,7 @@
 }
 
 .duckButton:active{
-  width: 300px;
+  width: 400px;
   background-image: url(./images/flying.png);
 }
 
