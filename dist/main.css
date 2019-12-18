@@ -104,16 +104,19 @@
  }
 
  .storyMute{
-   background-color: rgb(139, 74, 0);
-   font-size: 16px;
-  height: 30px !important;
+  background-color: rgb(139, 74, 0);
+  color: white !important;
+  font-size: 16px;
+  height: 80px !important;
+  padding: 10px;
   margin-left: 5px;
  }
  
  .storyRegular{
     background-color: darkcyan;
+      color: white !important;
    font-size: 16px;
-  height: 30px !important;
+  height: 80px !important;
  }
 
   .hidden{
