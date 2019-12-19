@@ -7,6 +7,7 @@
     <link href="ducks.css" rel="stylesheet">
     <link href="upgrades.css" rel="stylesheet">
     <link href="duckMenu.css" rel="stylesheet">
+    <link href="story.css" rel="stylesheet">
     <link href="./images/favicon.ico" rel="icon">
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
     <meta property="og:image" content="https://quackerclicker.firebaseapp.com/images/drawDuck.png"/>
@@ -42,7 +43,7 @@
    
     <div id="game">
       <div id="save">
-        <img id="volIcon"></img>
+        <img id="volIcon" src="./images/volUp.png"></img>
         <img src="./images/saveQuack.png" id="saveIcon" class="utilIcons">
         <img src="./images/trash.png"  id="trash" class="utilIcons">
       </div>
@@ -182,10 +183,10 @@
     </div>
     <div id="modalStory">
       <div id="story">
-        <h2>Welcome to Quacker Clicker</h2>
-        <p>The point of the game it to collect as many quacks as possible and then purchase upgrades or Auto Quackers with those Quacks!
+        <h2 class="storyHead">Welcome to Quacker Clicker</h2>
+        <p class="storyMain">The point of the game it to collect as many quacks as possible and then purchase upgrades or Auto Quackers with those Quacks! Start the game with or with out sound, to activate or deactivate the sound later click the duck in the top right corner.
         </p>
-        <p>Click the duck in the top left to change your duck!</p>
+        <p class="storyMain">Click the duck in the top left to change your duck!</p>
         <div class="storyButton">
           <button id="storyMute" class="storyMute push_button"> Start Muted</button>
           <button id="storyRegular" class="storyRegular push_button"> Start unMuted</button>

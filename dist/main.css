@@ -106,8 +106,9 @@
  .storyMute{
   background-color: rgb(139, 74, 0);
   color: white !important;
-  font-size: 16px;
+  font-size: 20px;
   height: 80px !important;
+  width: 300px  !important;
   padding: 10px;
   margin-left: 5px;
  }
@@ -115,8 +116,9 @@
  .storyRegular{
     background-color: darkcyan;
       color: white !important;
-   font-size: 16px;
+   font-size: 20px;
   height: 80px !important;
+    width: 300px  !important;
  }
 
   .hidden{
