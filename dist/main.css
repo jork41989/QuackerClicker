@@ -339,11 +339,8 @@ right: 0px !important;
 
 
 #duckchivementsButton{
-  position: absolute;
   height: 50px;
   width: 50px;
-  top: 3%;
-  left: 3%;
   background-image: url('./images/quackchivements.png');
   background-size: cover;
   cursor: pointer;
@@ -380,10 +377,10 @@ right: 0px !important;
   position: absolute;
   display: flex;
   flex-direction: row;
-  width:120px;
+  width:230px;
   height: 50px;
   top:3%;
-  left: 10%;
+  left: 3%;
 }
 
 .linkLogos{

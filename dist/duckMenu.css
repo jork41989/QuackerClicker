@@ -1,9 +1,6 @@
 #duckMenuButton{
-    position: absolute;
     height: 50px;
     width: 50px;
-    top: 3%;
-    left: 7%;
     background-image: url(./images/flying.png);
     background-size: cover;
     cursor: pointer;
