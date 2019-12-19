@@ -1,0 +1,41 @@
+ #autoQuackDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+    background: rgba(255, 255, 255, 0.657);
+    padding: 20px;
+    width: 400px;
+ }
+
+ .autoQuackDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+ #openAuto{
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  right: 450px;
+  background-image: url(./images/arrow.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scaleX(1);
+  cursor: pointer;
+}
+.closedAuto{
+transform: scaleX(-1) !important;
+right: 0px !important;
+}
+
+
+.autoQuack{
+  background: rgb(105, 189, 214);
+font-size: 20px;
+  height: 40px;
+  width: 200px;
+}

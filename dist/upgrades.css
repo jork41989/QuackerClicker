@@ -2,7 +2,7 @@
   position: absolute;
   height: 30px;
   width: 30px;
-  left: 300px;
+  left: 450px;
   background-image: url(./images/arrow.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -22,7 +22,7 @@ left: 0px !important;
     margin-left: 10px;
     background: rgba(255, 255, 255, 0.657);
     padding: 20px;
-    width: 250px;
+    width: 400px;
     position: relative;
     
  }
@@ -52,8 +52,8 @@ left: 0px !important;
 
   .manualQuack{
   background: rgb(231, 233, 115);
-  font-size: 16px;
-  height: 30px;
-  width: 160px;
+  font-size: 20px;
+  height: 40px;
+  width: 200px;
 
 }
